@@ -1,11 +1,10 @@
 import React from "react";
-
+import { FaArrowRightLong } from "react-icons/fa6";
 const Landing = () => {
   const maskerContent = ["We create", "eye-opening", "presentations"];
   const langingFotter = [
     "For public and private companies",
     "From the first pitch to IPO",
-    "START THE PROJECT",
   ];
   return (
     <>
@@ -14,21 +13,38 @@ const Landing = () => {
           {maskerContent.map((item, index) => {
             return (
               <div key={index} className="masker">
+                <div className="w-fit flex items-center">
+                {index === 1 && (
+                  <div>
+                  <img src="https://ochi.design/wp-content/uploads/2022/04/content-image01.jpg" alt="" className="w-[8rem] h-[6vw] bg-red-400 rounded-md mt-3 mr-4"/>
+                </div>
+              )}
                 <h1 className="Grostesk uppercase leading-[7.5vw] text-[8rem] font-bold">
                   {item}
                 </h1>
+                </div>
               </div>
             );
           })}
         </div>
-        <div className="broder border-t-[1px] border-zinc-700 flex justify-between px-14 mt-24">
+        <div className="broder border-t-[1px] border-zinc-700 flex px-14 mt-24">
           {langingFotter.map((item, index) => {
             return (
-              <div key={index} className="flex items-center justify-between mt-4">
-                <h4 className="Grostes">{item}</h4>
+              <div key={index} className={`w-[40%] flex ${index === 1 && "justify-center"} items-center  mt-4`}>
+                <h4 className={`${index === 1 && "mr-[4rem]"}`}>{item}</h4>
               </div>
             );
           })}
+          <div className="flex gap-4 items-center mt-4">
+          <div className="border-2 border-zinc-700 px-4 py-1 uppercase rounded-full">
+            <span className="leading-none text-sm font-normal tracking-tight">
+              START THE PROJECT
+            </span>
+          </div>
+            <div className="icon flex justify-center items-center  h-10 w-10 rounded-full border-2 border-zinc-700 rotate-[-45deg]">
+            <FaArrowRightLong />
+            </div>
+            </div>
         </div>
       </div>
     </>
