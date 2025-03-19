@@ -17,3 +17,19 @@ body{
 .Grostesk{
     font-family: "Grotesk";
 }
+
+.content{
+    animation-name: move;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
