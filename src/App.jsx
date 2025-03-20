@@ -3,6 +3,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 import NavBar from './Components/NavBar';
 import Landing from './Components/Landing';
 import Marque from './Components/Marque';
+import About from './Components/About';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <NavBar />
       <Landing />
       <Marque />
+      <About />
      </div>
     </>
   )

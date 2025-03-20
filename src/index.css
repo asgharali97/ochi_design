@@ -20,7 +20,7 @@ body{
 
 .content{
     animation-name: move;
-    animation-duration: 20s;
+    animation-duration: 8s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
