@@ -4,6 +4,7 @@ import NavBar from './Components/NavBar';
 import Landing from './Components/Landing';
 import Marque from './Components/Marque';
 import About from './Components/About';
+import Play from './Components/Play';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Landing />
       <Marque />
       <About />
+      <Play />
      </div>
     </>
   )

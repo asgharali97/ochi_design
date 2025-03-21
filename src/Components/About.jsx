@@ -40,8 +40,9 @@ const About = () => {
             <div className="flex justify-between">
               <div>
                 <h3 className="text-5xl font-bold">Our approach:</h3>
-                <button className="uppercase mt-6 py-3 px-8 rounded-full bg-[#262820] text-white">
+                <button className="uppercase flex items-center gap-7 mt-6 py-4 px-8 text-sm rounded-full bg-[#262820] text-white">
                   Read more
+                  <div className="h-2 w-2 rounded-full bg-white"></div>
                 </button>
               </div>
               <div className="img w-1/2">
