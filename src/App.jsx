@@ -5,6 +5,7 @@ import Landing from './Components/Landing';
 import Marque from './Components/Marque';
 import About from './Components/About';
 import Play from './Components/Play';
+import Featured from './Components/Featured';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Marque />
       <About />
       <Play />
+      <Featured />
      </div>
     </>
   )
