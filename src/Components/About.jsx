@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const About = () => {
+  const [hoverBtn, setHoverBtn] = useState(false);
+
+  useEffect(() => {
+    const btn = document.querySelector(".btn");
+    btn.addEventListener("mouseover", () => {
+      setHoverBtn(true);
+    });
+    btn.addEventListener("mouseout", () => {
+      setHoverBtn(false);
+    });
+  }, [hoverBtn]);
   return (
     <>
       <div className="w-full py-24 bg-[#cdea68] rounded-tl-3xl rounded-tr-3xl text-black">
@@ -40,9 +52,18 @@ const About = () => {
             <div className="flex justify-between">
               <div>
                 <h3 className="text-5xl font-bold">Our approach:</h3>
-                <button className="uppercase flex items-center gap-7 mt-6 py-4 px-8 text-sm rounded-full bg-[#262820] text-white">
+                <button className="btn uppercase flex items-center gap-7 mt-6 py-4 px-8 text-sm rounded-full bg-[#262820] text-white cursor-pointer">
                   Read more
-                  <div className="h-2 w-2 rounded-full bg-white"></div>
+                  {
+                    hoverBtn ? (
+                      <div className="h-12 w-12 rounded-full bg-white flex justify-center items-center">
+                        <FaArrowRightLong className="fill-black rotate-[-45deg]" />
+                      </div>
+                    ) : (
+                      <div className="h-2 w-2 rounded-full bg-white"></div>
+
+                    )
+                  }
                 </button>
               </div>
               <div className="img w-1/2">

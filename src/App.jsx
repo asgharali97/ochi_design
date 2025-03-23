@@ -6,6 +6,7 @@ import Marque from './Components/Marque';
 import About from './Components/About';
 import Play from './Components/Play';
 import Featured from './Components/Featured';
+import Review from './Components/Review';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <About />
       <Play />
       <Featured />
+      <Review />
      </div>
     </>
   )
