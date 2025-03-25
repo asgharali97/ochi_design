@@ -1,11 +1,16 @@
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
+
 const Landing = () => {
   const maskerContent = ["We create", "eye-opening", "presentations"];
   const langingFotter = [
     "For public and private companies",
     "From the first pitch to IPO",
   ];
+
+
+
+  
   return (
     <>
       <div className="w-full min-h-screen bg-zinc-900 pt-[130px]">
@@ -16,7 +21,10 @@ const Landing = () => {
                 <div className="w-fit flex items-center">
                 {index === 1 && (
                   <div>
-                  <img src="https://ochi.design/wp-content/uploads/2022/04/content-image01.jpg" alt="" className="w-[8rem] h-[6vw] bg-red-400 rounded-md mt-3 mr-4"/>
+                  <img src="https://ochi.design/wp-content/uploads/2022/04/content-image01.jpg" 
+                  alt="" 
+                  className="w-[8rem] h-[6vw]  rounded-md mt-3 mr-4"
+                  />
                 </div>
               )}
                 <h1 className="Grostesk uppercase leading-[7.5vw] text-[8rem] font-bold">

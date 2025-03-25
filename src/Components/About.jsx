@@ -3,39 +3,50 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import gsap from "gsap";
 const About = () => {
   const [hoverBtn, setHoverBtn] = useState(false);
-  const circleRef = useRef()
-  const innerCircle = useRef()
+  const circleRef = useRef();
+  const innerCircle = useRef();
+  const imgRef = useRef();
   const btnHover = () => {
-    setHoverBtn(true)
+    setHoverBtn(true);
     gsap.to(circleRef.current, {
-      "padding-right":"0.5rem",
-    })
+      "padding-right": "0.5rem",
+    });
     gsap.to(circleRef.current, {
       duration: 0.5,
       ease: "power2.in",
-    })
+    });
     gsap.to(innerCircle.current, {
-      "height":"2.5rem",
-      "width":"2.5rem",
+      height: "2.5rem",
+      width: "2.5rem",
+    });
+    gsap.to(imgRef.current, {
+      scale:0.95,
+      ease: "power1.in",
+      duration:0.7,
     })
-  }
+  };
   const btnHoverLeave = () => {
-     setHoverBtn(false)
-     gsap.to(circleRef.current, {
+    setHoverBtn(false);
+    gsap.to(circleRef.current, {
       duration: 0.5,
       ease: "power2.out",
-      "padding-right":"1.5rem",
-      onComplete:()=>{
-        gsap.set(circleRef.current,{
-          clearProps:"all",
-        })
-      }
-    })
+      "padding-right": "1.5rem",
+      onComplete: () => {
+        gsap.set(circleRef.current, {
+          clearProps: "all",
+        });
+      },
+    });
     gsap.to(innerCircle.current, {
-      "height":"0.5rem",
-      "width":"0.5rem",
+      height: "0.5rem",
+      width: "0.5rem",
+    });
+    gsap.to(imgRef.current, {
+      scale:1,
+      ease: "power1.out",
+      duration:0.7,
     })
-  }
+  };
   return (
     <>
       <div className="w-full py-24 bg-[#cdea68] rounded-tl-3xl rounded-tr-3xl text-black">
@@ -81,32 +92,26 @@ const About = () => {
                   className="btn h-[9vh] w-[13vw] flex items-center justify-between mt-6 py-6 pl-6 text-sm rounded-full uppercase bg-[#262820] text-white cursor-pointer hover:bg-[#0e0f0b]"
                 >
                   Read more
-                  <div ref={circleRef} className="h-12 w-12 pr-6 flex justify-end items-center">
-                      <div ref={innerCircle} className="h-2 w-2 rounded-full bg-white  flex justify-center items-center">
-                        {
-                          hoverBtn && (
-                            <FaArrowRightLong className=" fill-black rotate-[-46deg]" />
-                          )
-                        }
-                      </div>
+                  <div
+                    ref={circleRef}
+                    className="h-12 w-12 pr-6 flex justify-end items-center"
+                  >
+                    <div
+                      ref={innerCircle}
+                      className="h-2 w-2 rounded-full bg-white  flex justify-center items-center"
+                    >
+                      {hoverBtn && (
+                        <FaArrowRightLong className=" fill-black rotate-[-46deg]" />
+                      )}
+                    </div>
                   </div>
-                  {/* {hoverBtn ? (
-                    <div className="w-16 pr-2 flex justify-end items-center">
-                      <div className="h-12 w-12 rounded-full bg-white flex justify-center items-center">
-                        <FaArrowRightLong className="fill-black rotate-[-46deg]" />
-                      </div>
-                    </div>
-                  ) : (
-                    <div ref={circleRef} className="pr-6">
-                      <div className="h-2 w-2 rounded-full bg-white"></div>
-                    </div>
-                  )} */}
                 </button>
               </div>
               <div className="img w-1/2">
                 <img
                   src="https://ochi.design/wp-content/uploads/2022/05/Homepage-Photo-663x469.jpg"
                   alt=""
+                  ref={imgRef}
                   className="rounded-lg w-full"
                 />
               </div>
