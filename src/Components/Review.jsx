@@ -52,20 +52,61 @@ const Review = () => {
             </div>
           </div>
         </div>
-          <div className="w-full mt-6 border-t-1 border-b-1 border-zinc-600">
+        <div className="w-full mt-6 border-t-1 border-b-1 border-zinc-600">
           <div className="flex justify-between py-4 px-14">
             <span className="underline">Planetly</span>
             <span>Nina Walloch</span>
             <span className="underline uppercase">Read</span>
           </div>
-          </div>
-          <div className="w-full border-t-1 border-b-1 border-zinc-600">
+        </div>
+        <div className="w-full border-t-1 border-b-1 border-zinc-600">
           <div className="flex justify-between py-4 px-14">
             <span className="underline">Workiz Easy</span>
             <span>Tomer Levy</span>
             <span className="underline uppercase">Read</span>
           </div>
+        </div>
+        <div className="py-12 px-14 my-12 flex gap-5">
+          <div className="relative bg-[#004d43] w-[42vw] h-[52vh] flex items-center justify-center rounded-lg">
+            <img
+              className="w-[10vw]"
+              src="https://ochi.design/wp-content/uploads/2022/04/logo001.svg"
+              alt=""
+            />
+            <button
+              className="absolute py-1 px-2 m-6 w-[8vw] rounded-full border
+              border-[#cdea68] text-[#cdea68] font-light text-sm bottom-0 left-0"
+            >
+              ©2019-2022
+            </button>
           </div>
+          <div className="relative bg-[#212121] w-[23vw] h-[52vh] flex items-center justify-center rounded-lg">
+          <img
+              className="w-[10vw]"
+              src="https://ochi.design/wp-content/uploads/2022/04/logo002.svg"
+              alt=""
+            />
+            <button
+              className="absolute py-1 px-3 m-6 w-auto rounded-full border
+              border-[#fff] text-[#fff] font-light text-sm bottom-0 left-0 uppercase"
+            >
+            Rating 5.0 on Clutch
+            </button>
+          </div>
+          <div className="relative bg-[#212121] w-[23vw] h-[52vh] flex items-center justify-center rounded-lg">
+          <img
+              className="w-[8vw]"
+              src="https://ochi.design/wp-content/uploads/2022/04/logo003.png"
+              alt=""
+            />
+            <button
+              className="absolute py-1 px-3 m-6 w-auto rounded-full border
+              border-[#fff] text-[#fff] font-light text-sm bottom-0 left-0 uppercase"
+            >
+            Business Bootcamp Alumni
+            </button>
+          </div>
+        </div>
       </div>
     </>
   );

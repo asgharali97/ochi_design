@@ -1,18 +1,41 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
-
+import gsap from "gsap";
 const About = () => {
   const [hoverBtn, setHoverBtn] = useState(false);
-
-  useEffect(() => {
-    const btn = document.querySelector(".btn");
-    btn.addEventListener("mouseover", () => {
-      setHoverBtn(true);
-    });
-    btn.addEventListener("mouseout", () => {
-      setHoverBtn(false);
-    });
-  }, [hoverBtn]);
+  const circleRef = useRef()
+  const innerCircle = useRef()
+  const btnHover = () => {
+    setHoverBtn(true)
+    gsap.to(circleRef.current, {
+      "padding-right":"0.5rem",
+    })
+    gsap.to(circleRef.current, {
+      duration: 0.5,
+      ease: "power2.in",
+    })
+    gsap.to(innerCircle.current, {
+      "height":"2.5rem",
+      "width":"2.5rem",
+    })
+  }
+  const btnHoverLeave = () => {
+     setHoverBtn(false)
+     gsap.to(circleRef.current, {
+      duration: 0.5,
+      ease: "power2.out",
+      "padding-right":"1.5rem",
+      onComplete:()=>{
+        gsap.set(circleRef.current,{
+          clearProps:"all",
+        })
+      }
+    })
+    gsap.to(innerCircle.current, {
+      "height":"0.5rem",
+      "width":"0.5rem",
+    })
+  }
   return (
     <>
       <div className="w-full py-24 bg-[#cdea68] rounded-tl-3xl rounded-tr-3xl text-black">
@@ -52,18 +75,32 @@ const About = () => {
             <div className="flex justify-between">
               <div>
                 <h3 className="text-5xl font-bold">Our approach:</h3>
-                <button className="btn uppercase flex items-center gap-7 mt-6 py-4 px-8 text-sm rounded-full bg-[#262820] text-white cursor-pointer">
+                <button
+                  onMouseEnter={() => btnHover()}
+                  onMouseLeave={() => btnHoverLeave()}
+                  className="btn h-[9vh] w-[13vw] flex items-center justify-between mt-6 py-6 pl-6 text-sm rounded-full uppercase bg-[#262820] text-white cursor-pointer hover:bg-[#0e0f0b]"
+                >
                   Read more
-                  {
-                    hoverBtn ? (
-                      <div className="h-12 w-12 rounded-full bg-white flex justify-center items-center">
-                        <FaArrowRightLong className="fill-black rotate-[-45deg]" />
+                  <div ref={circleRef} className="h-12 w-12 pr-6 flex justify-end items-center">
+                      <div ref={innerCircle} className="h-2 w-2 rounded-full bg-white  flex justify-center items-center">
+                        {
+                          hoverBtn && (
+                            <FaArrowRightLong className=" fill-black rotate-[-46deg]" />
+                          )
+                        }
                       </div>
-                    ) : (
+                  </div>
+                  {/* {hoverBtn ? (
+                    <div className="w-16 pr-2 flex justify-end items-center">
+                      <div className="h-12 w-12 rounded-full bg-white flex justify-center items-center">
+                        <FaArrowRightLong className="fill-black rotate-[-46deg]" />
+                      </div>
+                    </div>
+                  ) : (
+                    <div ref={circleRef} className="pr-6">
                       <div className="h-2 w-2 rounded-full bg-white"></div>
-
-                    )
-                  }
+                    </div>
+                  )} */}
                 </button>
               </div>
               <div className="img w-1/2">
