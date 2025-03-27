@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import gsap from "gsap";
+import Button from "./Button";
 const About = () => {
   const [hoverBtn, setHoverBtn] = useState(false);
   const circleRef = useRef();
@@ -86,7 +87,8 @@ const About = () => {
             <div className="flex justify-between">
               <div>
                 <h3 className="text-5xl font-bold">Our approach:</h3>
-                <button
+                <Button/>
+                {/* <button
                   onMouseEnter={() => btnHover()}
                   onMouseLeave={() => btnHoverLeave()}
                   className="btn h-[9vh] w-[13vw] flex items-center justify-between mt-6 py-6 pl-6 text-sm rounded-full uppercase bg-[#262820] text-white cursor-pointer hover:bg-[#0e0f0b]"
@@ -105,7 +107,7 @@ const About = () => {
                       )}
                     </div>
                   </div>
-                </button>
+                </button> */}
               </div>
               <div className="img w-1/2">
                 <img
