@@ -7,6 +7,7 @@ import About from './Components/About';
 import Play from './Components/Play';
 import Featured from './Components/Featured';
 import Review from './Components/Review';
+import CTA from './Components/CTA';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Play />
       <Featured />
       <Review />
+      <CTA />
      </div>
     </>
   )

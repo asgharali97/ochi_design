@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
-
+import {useGSAP} from "@gsap/react";
+import { gsap } from "gsap";
 const Landing = () => {
   const maskerContent = ["We create", "eye-opening", "presentations"];
   const langingFotter = [
     "For public and private companies",
     "From the first pitch to IPO",
   ];
+  const headImgRef = useRef()
+
+  useGSAP(()=>{
+      gsap.from(headImgRef.current,{
+        x:-100,
+        duration:0.5,
+        ease:'power2.in',
+      })
+  })
+
 
 
 
@@ -20,12 +31,11 @@ const Landing = () => {
               <div key={index} className="masker">
                 <div className="w-fit flex items-center">
                 {index === 1 && (
-                  <div>
                   <img src="https://ochi.design/wp-content/uploads/2022/04/content-image01.jpg" 
                   alt="" 
-                  className="w-[8rem] h-[6vw]  rounded-md mt-3 mr-4"
+                  className="w-[8rem] h-[6vw] rounded-md mt-3 mr-4"
+                  ref={headImgRef}
                   />
-                </div>
               )}
                 <h1 className="Grostesk uppercase leading-[7.5vw] text-[8rem] font-bold">
                   {item}
