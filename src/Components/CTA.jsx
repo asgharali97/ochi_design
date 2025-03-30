@@ -2,6 +2,7 @@ import React, { useEffect,useState } from "react";
 import Button from "./Button";
 
 const CTA = () => {
+  const content = ["Ready","to start","project?"];
   const [angle, setAngle] = useState(0);
     useEffect(() => {
       window.addEventListener("mousemove", (e) => {
@@ -40,20 +41,16 @@ const CTA = () => {
           </div>
         </div>
         </div>
-        <div className="w-full flex justify-center items-center">
-          <h1 className="text-[10rem] text-zinc-800 font-[800] leading-none uppercase">
-            Ready
-          </h1>
-        </div>
-        <div className="w-full flex justify-center items-center leading-none uppercase">
-          <h1 className="text-[10rem] text-zinc-800 font-[800]">
-            to start
-          </h1>
-        </div>
-          <div className="w-full flex justify-center items-center leading-none uppercase">
-          <h1 className="text-[10rem] text-zinc-800 font-bold">
-           project?
-          </h1>
+        <div className="">
+          {
+            content.map((item, index) => (
+              <div key={index} className="w-full flex justify-center items-center leading-none uppercase">
+                <h1 className="text-[10rem] text-zinc-800 font-[800]">
+                  {item}
+                </h1>
+              </div>
+            ))
+          }
         </div>
         <div className="flex justify-center items-center mt-4 flex-col">
         <Button content="start the project" />

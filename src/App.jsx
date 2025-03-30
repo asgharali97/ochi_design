@@ -8,7 +8,7 @@ import Play from './Components/Play';
 import Featured from './Components/Featured';
 import Review from './Components/Review';
 import CTA from './Components/CTA';
-
+import Footer from './Components/Footer';
 
 function App() {
   const locomotiveScroll = new LocomotiveScroll();
@@ -24,6 +24,7 @@ function App() {
       <Featured />
       <Review />
       <CTA />
+      <Footer />
      </div>
     </>
   )
