@@ -18,7 +18,7 @@ const Play = () => {
   return (
     <>
       <div className="w-full h-screen overflow-hidden bg-zinc-300">
-        <div className="relative w-full h-full bg-cover bg-center bg-[url('https://ochi.design/wp-content/uploads/2022/05/Top-Viewbbcbv-1-1440x921.jpg')]">
+        <div data-scroll  data-scroll-speed="-.7" data-scroll-section  className="relative w-full h-full bg-cover bg-center bg-[url('https://ochi.design/wp-content/uploads/2022/05/Top-Viewbbcbv-1-1440x921.jpg')]">
           <div className="absolute flex justify-center gap-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 h-96">
             <div className="flex justify-center items-center h-[14vw] w-[14vw] bg-zinc-100 rounded-full">
               <div className="flex justify-center items-center h-3/5 w-3/5 bg-zinc-800 rounded-full">

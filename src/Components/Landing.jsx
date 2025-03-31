@@ -24,7 +24,7 @@ const Landing = () => {
   
   return (
     <>
-      <div className="w-full min-h-screen bg-zinc-900 pt-[130px]">
+      <div data-scroll data-scroll-speed="-0.9" data-scroll-section className="w-full min-h-screen bg-zinc-900 pt-[130px]">
         <div className="textsturcture px-14">
           {maskerContent.map((item, index) => {
             return (

@@ -50,7 +50,7 @@ const About = () => {
   };
   return (
     <>
-      <div className="w-full py-24 bg-[#cdea68] rounded-tl-3xl rounded-tr-3xl text-black">
+      <div data-scroll data-scroll-speed="-0.2" data-scroll-section className="w-full py-24 bg-[#cdea68] rounded-tl-3xl rounded-tr-3xl text-black">
         <div className="w-full px-14">
           <h2 className="text-[4vw] leading-none">
             Ochi is a strategic presentation agency for forward-thinking
