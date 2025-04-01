@@ -3,6 +3,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import gsap from "gsap";
 import Button from "./Button";
 const About = () => {
+  const socialLinks = ["Instagram", "LinkedIn", "FaceBook", "Behance"];
   const [hoverBtn, setHoverBtn] = useState(false);
   const circleRef = useRef();
   const innerCircle = useRef();
@@ -21,10 +22,10 @@ const About = () => {
       width: "2.5rem",
     });
     gsap.to(imgRef.current, {
-      scale:0.95,
+      scale: 0.95,
       ease: "power1.in",
-      duration:0.7,
-    })
+      duration: 0.7,
+    });
   };
   const btnHoverLeave = () => {
     setHoverBtn(false);
@@ -43,14 +44,19 @@ const About = () => {
       width: "0.5rem",
     });
     gsap.to(imgRef.current, {
-      scale:1,
+      scale: 1,
       ease: "power1.out",
-      duration:0.7,
-    })
+      duration: 0.7,
+    });
   };
   return (
     <>
-      <div data-scroll data-scroll-speed="-0.2" data-scroll-section className="w-full py-24 bg-[#cdea68] rounded-tl-3xl rounded-tr-3xl text-black">
+      <div
+        data-scroll
+        data-scroll-speed="-0.2"
+        data-scroll-section
+        className="w-full py-24 bg-[#cdea68] rounded-tl-3xl rounded-tr-3xl text-black"
+      >
         <div className="w-full px-14">
           <h2 className="text-[4vw] leading-none">
             Ochi is a strategic presentation agency for forward-thinking
@@ -74,10 +80,12 @@ const About = () => {
             <div className="mt-32">
               <span className="text-lg font-meduim">S:</span>
               <ul className="mt-3">
-                <li>Instagram</li>
-                <li>LinkedIn</li>
-                <li>FaceBook</li>
-                <li>Behance</li>
+                {socialLinks.map((item, index) => (
+                  <li key={index} className="relative group cursor-pointer">
+                    <span className="transition">{item}</span>
+                    <span className="absolute left-0 bottom-0 w-full h-[0.8px] bg-zinc-900 transition-transform duration-200 group-hover:scale-x-0 origin-left group-hover:origin-right"></span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -87,9 +95,7 @@ const About = () => {
             <div className="flex justify-between">
               <div>
                 <h3 className="text-5xl font-bold">Our approach:</h3>
-                <Button
-                content={"Read More"}
-                />
+                <Button content={"Read More"} />
                 {/* <button
                   onMouseEnter={() => btnHover()}
                   onMouseLeave={() => btnHoverLeave()}

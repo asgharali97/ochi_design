@@ -1,6 +1,9 @@
 import React from "react";
 
 const Footer = () => {
+  const socialLinks = ["Instagram", "LinkedIn", "FaceBook", "Behance"];
+  const brnach = ["202-1965 W 4th Ave","Vancouver, Canada","30 Chukarina St","Lviv, Ukraine"]
+  const links = ["Services", "Our work", "About us", "Insights", "Contact us"];
   return (
     <>
       <div className="w-full min-h-screen bg-zinc-100 text-zinc-800  py-12 px-14 ">
@@ -53,48 +56,72 @@ const Footer = () => {
               <div className="">
                 <div className="mt-32">
                   <span className="text-lg font-meduim 0">S:</span>
-                  <ul className="mt-3 underline cursor-pointer">
-                    <li>Instagram</li>
-                    <li>LinkedIn</li>
-                    <li>FaceBook</li>
-                    <li>Behance</li>
+                  <ul className="mt-3">
+                    {socialLinks.map((item, index) => (
+                      <li
+                        key={index}
+                        className="relative group cursor-pointer "
+                      >
+                        <span className="transition">{item}</span>
+                        <span className="absolute bottom-0 left-0 w-1/3 h-[0.8px] bg-zinc-900 transition-transform duration-200 group-hover:scale-x-0 origin-left group:hover:origin-right"></span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
                 <div className="mt-4">
                   <span className="text-lg font-meduim 0">L:</span>
-                  <ul className="mt-3 underline cursor-pointer">
-                    <li>202-1965 W 4th Ave</li>
-                    <li className="mb-4">Vancouver, Canada</li>
-                    <li>30 Chukarina St</li>
-                    <li>Lviv, Ukraine</li>
+                  <ul className="mt-3">
+                    {
+                      brnach.map((item,index)=>(
+                        <li
+                        key={index}
+                        className="relative group cursor-pointer "
+                      >
+                        <span className="transition">{item}</span>
+                        <span className="absolute bottom-0 left-0 w-1/2 h-[0.8px] bg-zinc-900 transition-transform duration-200 group-hover:scale-x-0 origin-left group:hover:origin-right"></span>
+                        </li>
+                      ))
+                    }
                   </ul>
                 </div>
                 <div className="mt-4">
                   <span className="text-lg font-meduim 0">E:</span>
                   <ul className="mt-3 underline cursor-pointer">
-                    <li>Hello@ochi.design</li>
+                    <li>
+                    <span className="transition">Hello@ochi.design</span>
+                    <span className="absolute bottom-0 left-0 w-1/2 h-[0.8px] bg-zinc-900 transition-transform duration-200 group-hover:scale-x-0 origin-left group:hover:origin-right"></span>
+                    </li>
                   </ul>
                 </div>
                 <div className="mt-14">
                   <span className="text-zinc-400 ">
                     © ochi design 2025.{" "}
-                    <span className="underline cursor-pointer">Legal trems</span>
+                    <span className="underline cursor-pointer">
+                      Legal trems
+                    </span>
                   </span>
                 </div>
               </div>
               <div className="relative w-[23%]">
                 <div className="absolute bottom-0 left-0">
                   <span className="text-lg font-meduim 0">M:</span>
-                  <ul className="mt-3 underline cursor-pointer">
-                    <li>Home</li>
-                    <li>Services</li>
-                    <li>Our Work</li>
-                    <li>About us</li>
-                    <li>Insigts</li>
-                    <li>Contact us</li>
+                  <ul className="mt-3">
+                    {
+                      links.map((item,index)=>(
+                        <li
+                        key={index}
+                        className="relative group cursor-pointer "
+                      >
+                        <span className="transition">{item}</span>
+                        <span className="absolute bottom-0 left-0 w-1/2 h-[0.8px] bg-zinc-900 transition-transform duration-200 group-hover:scale-x-0 origin-left group:hover:origin-right"></span>
+                        </li>
+                      ))
+                    }
                   </ul>
                   <div className="mt-14">
-                    <span className="text-zinc-400 cursor-pointer">Website by Obys</span>
+                    <span className="text-zinc-400 cursor-pointer">
+                      Website by Obys
+                    </span>
                   </div>
                 </div>
               </div>
