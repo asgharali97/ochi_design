@@ -86,17 +86,17 @@ const Footer = () => {
                 </div>
                 <div className="mt-4">
                   <span className="text-lg font-meduim 0">E:</span>
-                  <ul className="mt-3 underline cursor-pointer">
+                  <ul className="mt-3 cursor-pointer">
                     <li>
                     <span className="transition">Hello@ochi.design</span>
-                    <span className="absolute bottom-0 left-0 w-1/2 h-[0.8px] bg-zinc-900 transition-transform duration-200 group-hover:scale-x-0 origin-left group:hover:origin-right"></span>
+                    <span className="absolute bottom-20 left-0 w-32 h-[0.8px] bg-zinc-900 transition-transform duration-200 group-hover:scale-x-0 origin-left group:hover:origin-right"></span>
                     </li>
                   </ul>
                 </div>
                 <div className="mt-14">
                   <span className="text-zinc-400 ">
                     © ochi design 2025.{" "}
-                    <span className="underline cursor-pointer">
+                    <span className="cursor-pointer">
                       Legal trems
                     </span>
                   </span>
@@ -111,7 +111,7 @@ const Footer = () => {
                         <li
                         key={index}
                         className="relative group cursor-pointer "
-                      >
+                        >
                         <span className="transition">{item}</span>
                         <span className="absolute bottom-0 left-0 w-1/2 h-[0.8px] bg-zinc-900 transition-transform duration-200 group-hover:scale-x-0 origin-left group:hover:origin-right"></span>
                         </li>
