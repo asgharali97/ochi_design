@@ -8,6 +8,7 @@ const Review = () => {
           <h1 className="text-5xl font-semibold">Clients' reviews</h1>
         </div>
         <div className="border-t-1 border-zinc-600 mt-4"></div>
+        <div>
         <div className="w-full px-14">
           <div className="py-4 flex justify-between">
             <div className="">
@@ -106,6 +107,7 @@ const Review = () => {
             Business Bootcamp Alumni
             </button>
           </div>
+        </div>
         </div>
       </div>
     </>

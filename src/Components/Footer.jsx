@@ -6,7 +6,7 @@ const Footer = () => {
   const links = ["Services", "Our work", "About us", "Insights", "Contact us"];
   return (
     <>
-      <div className="w-full min-h-screen bg-zinc-100 text-zinc-800  py-12 px-14 ">
+      <div data-scroll data-scroll-speed="0.9" data-scroll-section className="w-full min-h-screen bg-zinc-100 text-zinc-800  py-12 px-14">
         <div className="flex justify-between">
           <div className="left relative">
             <h3 className="text-[6vw] font-bold uppercase leading-none">

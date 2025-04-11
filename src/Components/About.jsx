@@ -95,7 +95,7 @@ const About = () => {
             <div className="flex justify-between">
               <div>
                 <h3 className="text-5xl font-bold">Our approach:</h3>
-                <Button content={"Read More"} />
+                <Button label="Read More" />
                 {/* <button
                   onMouseEnter={() => btnHover()}
                   onMouseLeave={() => btnHoverLeave()}

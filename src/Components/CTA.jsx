@@ -20,7 +20,7 @@ const CTA = () => {
 
   return (
     <>
-      <div className="w-full min-h-screen relative py-12 px-14 bg-[#cdea68] overflow-hidden">
+      <div data-scroll  data-scroll-speed="-0.9" data-scroll-section className="w-full min-h-screen relative py-12 px-14 bg-[#cdea68] overflow-hidden">
       <div className="flex justify-center absolute items-center w-[90%] h-96 mt-12">
       <div className="w-full h-full">
           <div className="absolute flex justify-center gap-12 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 h-96">
@@ -53,9 +53,9 @@ const CTA = () => {
           }
         </div>
         <div className="flex justify-center items-center mt-4 flex-col">
-        <Button content="start the project" />
+        <Button label="start the project" />
         <span className="mt-6 uppercase text-zinc-800 font-semibold">OR</span>
-        <Button content="Hello@ochi.design" />
+        <Button label="Hello@ochi.design" bg="transparent" text="black"/>
         </div>
       </div>
     </>
