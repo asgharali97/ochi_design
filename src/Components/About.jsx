@@ -1,59 +1,16 @@
-import React, { useRef, useState } from "react";
-import { FaArrowRightLong } from "react-icons/fa6";
-import gsap from "gsap";
+import React, { useRef } from "react";
 import Button from "./Button";
 const About = () => {
   const socialLinks = ["Instagram", "LinkedIn", "FaceBook", "Behance"];
-  const [hoverBtn, setHoverBtn] = useState(false);
-  const circleRef = useRef();
-  const innerCircle = useRef();
   const imgRef = useRef();
-  const btnHover = () => {
-    setHoverBtn(true);
-    gsap.to(circleRef.current, {
-      "padding-right": "0.5rem",
-    });
-    gsap.to(circleRef.current, {
-      duration: 0.5,
-      ease: "power2.in",
-    });
-    gsap.to(innerCircle.current, {
-      height: "2.5rem",
-      width: "2.5rem",
-    });
-    gsap.to(imgRef.current, {
-      scale: 0.95,
-      ease: "power1.in",
-      duration: 0.7,
-    });
-  };
-  const btnHoverLeave = () => {
-    setHoverBtn(false);
-    gsap.to(circleRef.current, {
-      duration: 0.5,
-      ease: "power2.out",
-      "padding-right": "1.5rem",
-      onComplete: () => {
-        gsap.set(circleRef.current, {
-          clearProps: "all",
-        });
-      },
-    });
-    gsap.to(innerCircle.current, {
-      height: "0.5rem",
-      width: "0.5rem",
-    });
-    gsap.to(imgRef.current, {
-      scale: 1,
-      ease: "power1.out",
-      duration: 0.7,
-    });
+  const handleMouse = () => {
+    console.log('enter')
   };
   return (
     <>
       <div
         data-scroll
-        data-scroll-speed="-0.2"
+        data-scroll-speed="-0.1"
         data-scroll-section
         className="w-full py-24 bg-[#cdea68] rounded-tl-3xl rounded-tr-3xl text-black"
       >
@@ -95,7 +52,7 @@ const About = () => {
             <div className="flex justify-between">
               <div>
                 <h3 className="text-5xl font-bold">Our approach:</h3>
-                <Button label="Read More" />
+                <Button label="Read More"/>
               </div>
               <div className="img w-1/2">
                 <img

@@ -4,17 +4,29 @@ import gsap from "gsap";
 const NavBar = () => {
   const links = ["Services", "Our work", "About us", "Insights", "Contact us"];
 
-  const hiddenSpanRef = useRef();
-  const spanRef = useRef();
-  const handleHover = () => {
+  const hiddenSpanRef = useRef([]);
+  const spanRef = useRef([]);
+
+    if (spanRef.current.length !== links.length) {
+    spanRef.current = Array(links.length)
+      .fill()
+      .map((_, i) => spanRef.current[i] || React.createRef());
+  }
+
+  if (hiddenSpanRef.current.length !== links.length) {
+    hiddenSpanRef.current = Array(links.length)
+      .fill()
+      .map((_, i) => hiddenSpanRef.current[i] || React.createRef());
+  }
+  const handleHover = (index) => {
     console.log("hover");
-    gsap.to(spanRef.current, {
+    gsap.to(spanRef.current[index].current, {
       y: -30,
       duration: 0.2,
       ease: "power2.out",
       opacity: 0,
     });
-    gsap.to(hiddenSpanRef.current, {
+    gsap.to(hiddenSpanRef.current[index].current, {
       y: 0,
       duration: 0.4,
       opacity: 100,
@@ -24,16 +36,16 @@ const NavBar = () => {
     });
   };
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = (index) => {
     console.log("leave");
-    gsap.to(hiddenSpanRef.current, {
+    gsap.to(hiddenSpanRef.current[index].current, {
       top: "2rem",
       duration: 0.3,
       ease: "power2.out",
       opacity: 0,
     });
 
-    gsap.to(spanRef.current, {
+    gsap.to(spanRef.current[index].current, {
       y: 0,
       duration: 0.3,
       ease: "power2.in",
@@ -43,7 +55,7 @@ const NavBar = () => {
   };
   return (
     <>
-      <div className="fixed z-10 py-4 px-14 w-full">
+      <div className="fixed z-10 py-4 px-14 w-full backdrop-blur-md">
         <div className="grid gap-4 grid-cols-12">
           <div className="logo col-span-6">
             <svg
@@ -81,20 +93,20 @@ const NavBar = () => {
                 <a
                   href="#"
                   className="navElem relative inline-"
-                  onMouseEnter={handleHover}
-                  onMouseLeave={handleMouseLeave}
+                  onMouseEnter={() => handleHover(index)}
+                  onMouseLeave={() => handleMouseLeave(index)}
                   key={index}
                 >
                   <span className="relative block overflow-hidden">
                     <span
-                      ref={spanRef}
-                      className="relative text-light font-nomal capitalize"
+                      ref={spanRef.current[index]}
+                      className={`relative text-light font-nomal capitalize ${index === 4 ? 'ml-auto mr-0' : ''}`}
                     >
                       {item}
                     </span>
                     <span
-                      ref={hiddenSpanRef}
-                      className="absolute left- top-8  text-light font-nomal capitalize"
+                      ref={hiddenSpanRef.current[index]}
+                      className={`absolute left- top-8  text-light font-nomal capitaliz ${index === 4 ? 'ml-auto mr-0' : ''}`}
                     >
                       {item}
                     </span>
