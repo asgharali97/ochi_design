@@ -1,14 +1,53 @@
-import React from "react";
+import React, { useRef } from "react";
+import gsap from "gsap";
+
 const NavBar = () => {
   const links = ["Services", "Our work", "About us", "Insights", "Contact us"];
 
+  const hiddenSpanRef = useRef();
+  const spanRef = useRef();
+  const handleHover = () => {
+    console.log("hover");
+    gsap.to(spanRef.current, {
+      y: -30,
+      duration: 0.2,
+      ease: "power2.out",
+      opacity: 0,
+    });
+    gsap.to(hiddenSpanRef.current, {
+      y: 0,
+      duration: 0.4,
+      opacity: 100,
+      ease: "power2.inOut",
+      display: "block",
+      top: 0,
+    });
+  };
+
+  const handleMouseLeave = () => {
+    console.log("leave");
+    gsap.to(hiddenSpanRef.current, {
+      top: "2rem",
+      duration: 0.3,
+      ease: "power2.out",
+      opacity: 0,
+    });
+
+    gsap.to(spanRef.current, {
+      y: 0,
+      duration: 0.3,
+      ease: "power2.in",
+      display: "block",
+      opacity: 100,
+    });
+  };
   return (
     <>
-      <div className="fixed z-[999] w-full px-14 py-4">
-        <div className="flex justify-between items-center">
-          <div className="logo">
+      <div className="fixed z-10 py-4 px-14 w-full">
+        <div className="grid gap-4 grid-cols-12">
+          <div className="logo col-span-6">
             <svg
-              width="68"
+              width="72"
               height="30"
               viewBox="0 0 72 30"
               fill="none"
@@ -36,19 +75,54 @@ const NavBar = () => {
               ></path>
             </svg>
           </div>
-          <div className="links flex gap-6">
+          <div className="flex gap-12 col-span-6">
             {links.map((item, index) => {
               return (
                 <a
+                  href="#"
+                  className="navElem relative inline-"
+                  onMouseEnter={handleHover}
+                  onMouseLeave={handleMouseLeave}
                   key={index}
-                  className={`text-light font-nomal capitalize ${
-                    index === 4 && "ml-[14rem]"
-                  }`}
                 >
-                  {item}
+                  <span className="relative block overflow-hidden">
+                    <span
+                      ref={spanRef}
+                      className="relative text-light font-nomal capitalize"
+                    >
+                      {item}
+                    </span>
+                    <span
+                      ref={hiddenSpanRef}
+                      className="absolute left- top-8  text-light font-nomal capitalize"
+                    >
+                      {item}
+                    </span>
+                  </span>
                 </a>
               );
             })}
+            {/* <a
+              href="#"
+              className="navElem relative inline-"
+              onMouseEnter={handleHover}
+              onMouseLeave={handleMouseLeave}
+            >
+              <span className="relative block overflow-hidden">
+                <span
+                  ref={spanRef}
+                  className="relative text-light font-nomal capitalize"
+                >
+                  Services
+                </span>
+                <span
+                  ref={hiddenSpanRef}
+                  className="absolute left- top-8  text-light font-nomal capitalize"
+                >
+                  Services
+                </span>
+              </span>
+            </a> */}
           </div>
         </div>
       </div>

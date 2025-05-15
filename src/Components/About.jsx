@@ -96,26 +96,6 @@ const About = () => {
               <div>
                 <h3 className="text-5xl font-bold">Our approach:</h3>
                 <Button label="Read More" />
-                {/* <button
-                  onMouseEnter={() => btnHover()}
-                  onMouseLeave={() => btnHoverLeave()}
-                  className="btn h-[9vh] w-[13vw] flex items-center justify-between mt-6 py-6 pl-6 text-sm rounded-full uppercase bg-[#262820] text-white cursor-pointer hover:bg-[#0e0f0b]"
-                >
-                  Read more
-                  <div
-                    ref={circleRef}
-                    className="h-12 w-12 pr-6 flex justify-end items-center"
-                  >
-                    <div
-                      ref={innerCircle}
-                      className="h-2 w-2 rounded-full bg-white  flex justify-center items-center"
-                    >
-                      {hoverBtn && (
-                        <FaArrowRightLong className=" fill-black rotate-[-46deg]" />
-                      )}
-                    </div>
-                  </div>
-                </button> */}
               </div>
               <div className="img w-1/2">
                 <img

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import {useGSAP} from "@gsap/react";
 import { gsap } from "gsap";
@@ -16,15 +16,10 @@ const Landing = () => {
         duration:0.5,
         ease:'power2.in',
       })
-  })
-
-
-
-
-  
+  })  
   return (
     <>
-      <div data-scroll data-scroll-speed="-0.9" data-scroll-section className="w-full min-h-screen bg-zinc-900 pt-[130px]">
+      <div data-scroll data-scroll-speed="-0.8" data-scroll-section className="w-full min-h-screen bg-zinc-900 pt-[130px]">
         <div className="textsturcture px-14">
           {maskerContent.map((item, index) => {
             return (
